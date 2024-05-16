@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Triple P</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/img/logo.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <link href="static/css/style.css" rel="stylesheet">
+<style type="text/css">
+    
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hind&display=swap');
+
+* {
+  -webkit-font-smoothing: antialiased;
+  color: #acbdce;
+}
+
+:root {
+  --border-radius: 10px;
+}
+
+
+
+.Card {
+    margin-left: 40%;
+    margin-bottom: 10px;
+  padding: 1px;
+  border-radius: var(--border-radius);
+  background: linear-gradient(-67deg, rgba(#c8d8e7, .7), rgba(255,255,255,.8));
+  overflow: hidden;
+  box-shadow: 
+    -2px -2px 6px rgba(#fff, .6),
+    2px 2px 12px #c8d8e7;
+  width: 380px;
+}
+
+.CardInner {
+  padding: 16px 16px;
+  background-color: #e2e9f4;
+  border-radius: var(--border-radius);
+}
+
+.container {
+  display: flex;
+}
+
+.Icon {
+  min-width: 46px;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  margin-right: 12px;
+  box-shadow: 
+    -2px -2px 6px rgba(#fff, .6),
+    2px 2px 12px #c8d8e7;
+    
+  svg {
+    transform: translate(-1px, -1px);    
+  }
+}
+
+label {
+  font-family: "Hind", sans-serif;
+  display: block;
+  color: #3c4b66;
+  margin-bottom: 12px;
+}
+
+.InputContainer {
+  width: 100%;
+}
+
+input {
+  background-color: #e3edf7;
+  padding: 16px 32px;
+  border: none;
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  color: #a9b8c9;
+  transition: all 240ms ease-out;
+  width: 100%;
+  
+  &::placeholder {
+    color: #6d7f8f;
+  }
+  
+  &:focus {
+    outline: none;
+    color: #6d7f8f;
+    background-color: lighten(#e3edf7, 3%);
+  }
+};
+  
+.InputContainer {
+  --top-shadow: inset 1px 1px 3px #c5d4e3, inset 2px 2px 6px #c5d4e3;
+  --bottom-shadow: inset -2px -2px 4px rgba(255,255,255, .7);
+  
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  
+  &:before,
+  &:after {
+    left: 0;
+    top: 0;
+    display: block;
+    content: "";
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  
+  &:before {
+    box-shadow: var(--bottom-shadow);
+  }
+  
+  &:after {
+    box-shadow: var(--top-shadow);
+  }
+}
+
+
+.btn_form
+{
+  margin-left: -50px;
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="index.html">Triple P</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="static/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="history">URL History</a></li>
+          <li><img src="static/img/avatar.svg" style="height: 30px;width: 30px;margin-left: 30px"></li>
+          <li><a class="nav-link scrollto" href="logout">Logout</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+ <br><br><br><br>
+ 
+
+  <main id="main">
+
+<div class="Card">
+  <div class="CardInner">
+    <form action="/shorten-url" method="post">
+  <label>Shorten Your URL</label>
+  <div class="container">
+    <div class="Icon">
+        <button type="submit">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  </button>
+    </div>
+    <div class="InputContainer">
+      <input name="long_url" placeholder="It just can't be pizza..."/>
+  </form>
+    </div>
+  </div>
+ </div>
+</div>
+
+        <input class="copy-text" type="text" value="{{short_url}}" placeholder="shorten url" style="text-align: center">
+        <div style="margin-left: 45%;margin-top: 20px;margin-bottom: 20px">
+        <form action="/generate_qr" method="post" class="btn_form"> 
+        <button class="copy-button" style="display: inline-block;
+                                            border: none;
+                                            outline: none;
+                                            padding: 10px 30px;
+                                            color: #333;
+                                            font-weight: bold;
+                                            border: 2px solid #a9b8c9;
+                                            border-radius: 7px;
+        ">Copy</button>
+        <button type="submit" style="display: inline-block;
+        border: none;
+        outline: none;
+        padding: 10px 30px;
+        color: #333;
+        border: 2px solid #a9b8c9;
+        background: #E3EDF7;
+        font-weight: bold;
+        border-radius: 7px;
+        margin-left: 10px;
+        ">Show in QR code</button>
+         <input type="hidden" id="enter-url" name="url" value="{{short_url}}">
+        </form>
+        </div>
+        <div class="qr-code" style="text-align: center;"><img src="data:image/png;base64,{{ qr_code}}" alt=""></div>
+  </main>
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>Triple P</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed by <a href="#">Triple P</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="#intro" class="scrollto">Home</a>
+            <a href="#about" class="scrollto">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/vendor/aos/aos.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js"></script>
+<script type="text/javascript">
+const copyButton = document.querySelector(".copy-button");
+const copyText = document.querySelector(".copy-text");
+
+   document.querySelector('.copy-button').addEventListener('click', function(event) {
+        event.preventDefault();
+        // Add your copy functionality here
+    });
+copyButton.addEventListener("click", () => {
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  copyButton.classList.toggle("success");
+  copyButton.innerHTML = "Copied!";
+
+  setTimeout(function () {
+    copyButton.classList.toggle("success");
+    copyButton.innerHTML = "Copy";
+  }, 2000);
+});
+</script>
+</body>
+
+</html>

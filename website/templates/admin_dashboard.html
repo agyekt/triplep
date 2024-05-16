@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Triple P</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static/img/logo.png" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <link href="../static/css/style.css" rel="stylesheet">
+<style type="text/css">
+
+</style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="index.html">Triple P</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="../static/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/admin_dashboard">Dashboard</a></li>
+          <li><img src="../static/img/avatar.svg" style="height: 30px;width: 30px;margin-left: 30px"></li>
+          <li><a class="nav-link scrollto" href="logout">Logout</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+ <br><br><br><br>
+ 
+
+  <main id="main">
+
+          <div class="row">
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-body">
+                  <div class="mr-5">Total User <span id="total-sessions">{{click_num}}</span></div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                  <span class="float-left">View Details</span>
+                  <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-body">
+                  <div class="mr-5">New User <span id="total-visitors">{{session}}</span></div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                  <span class="float-left">View Details</span>
+                  <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+    
+          <!-- Example DataTables Card-->
+          <div class="card mb-3">
+            <div class="card-header" style="font-weight:bold;">
+              <i class="fa fa-table"></i> User Sessions</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th>Reset Password</th>
+                      <th>Delete User</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+        {% for dat in analy_data %}
+        <tr>
+            <td>{{ dat.username }}</td>
+            <td>{{ dat.email }}</td>
+            <td><button onclick="reset_pass('{{ dat.email }}')" style="background:green;
+                                                                      border:none;
+                                                                      padding: 5px 20px;
+                                                                      border-radius: 7px;
+                                                                      font-weight:bold;
+              
+            ">Reset</button></td>
+            <td><button onclick="delete_user('{{ dat.email }}')" style="background:red;
+                                                                        border:none;
+                                                                        padding: 5px 20px;
+                                                                        border-radius: 7px;
+                                                                        font-weight:bold;
+            ">Delete</button></td>
+        </tr>
+        {% endfor %}
+                  </tfoot>
+                  <tbody id="customer-table">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+
+  </main>
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>Triple P</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed by <a href="#">Triple P</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="#intro" class="scrollto">Home</a>
+            <a href="#about" class="scrollto">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/vendor/aos/aos.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/js/main.js"></script>
+<script type="text/javascript">
+function reset_pass(email) {
+  let person = prompt("Enter password:", "");
+  if (person === null || person === "") {
+    console.log("User cancelled the prompt.");
+    return;
+  }
+
+  let text = person; // Assigning the entered password to the text variable
+
+  fetch('/admin/reset_pass', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({email: email, text: text}) // Sending email and text in the body
+  });
+}
+
+
+function delete_user(email) {
+
+  fetch('/admin/delete_user', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({email: email}) // Sending email and text in the body
+  });
+  reload();
+}
+</script>
+</body>
+
+</html>
